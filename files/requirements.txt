@@ -1,0 +1,16 @@
+# Frootify V2 — Python dependencies
+# Install with:
+#   pip install -r requirements.txt
+
+# Core inference
+onnxruntime>=1.16.0        # CPU-only ONNX runtime (Pi 4 compatible)
+
+# Computer vision
+opencv-python-headless>=4.8.0   # use headless on Pi if no display needed
+                                 # switch to opencv-python if you want imshow
+
+# DHT sensor (Adafruit CircuitPython stack)
+adafruit-circuitpython-dht>=3.7.0
+RPi.GPIO>=0.7.1
+
+# Standard library only beyond this point — numpy is pulled in by onnxruntime

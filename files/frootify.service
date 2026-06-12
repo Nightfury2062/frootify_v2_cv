@@ -1,0 +1,30 @@
+[Unit]
+Description=Frootify V2 — Tomato Quality Monitor
+After=multi-user.target
+Wants=network.target
+
+[Service]
+# ── EDIT THESE TWO LINES to match your Pi's paths ──
+User=pi
+WorkingDirectory=/home/pi/frootify_v2
+
+# If you're using a virtual environment, use the full venv python path:
+#   ExecStart=/home/pi/frootify_v2/venv/bin/python app.py
+# Otherwise use the system python3:
+ExecStart=/usr/bin/python3 app.py
+
+Restart=on-failure
+RestartSec=5
+
+# Allow GPIO access
+SupplementaryGroups=gpio
+
+# No GUI on headless boot — set SHOW_DISPLAY=False in app.py
+# or uncomment the next line to export a virtual display
+# Environment="DISPLAY=:0"
+
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
