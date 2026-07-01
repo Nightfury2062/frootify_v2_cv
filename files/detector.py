@@ -12,7 +12,7 @@ import numpy as np
 
 # ── Constants ──────────────────────────────────────────────────────────────────
 INPUT_SIZE   = 640          # model expects 640×640
-CONF_THRESH  = 0.60         # confirmed from your Pi test (rotten ~0.79, bg ~0.34)
+CONF_THRESH  = 0.60         
 IOU_THRESH   = 0.45         # NMS overlap threshold
 CLASS_NAMES  = ["Fresh Tomato", "Rotten Tomato"]
 
